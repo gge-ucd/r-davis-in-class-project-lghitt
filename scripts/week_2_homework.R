@@ -1,6 +1,7 @@
 ### Week 2 Homework ###
 
 set.seed(15)
+?set.seed
 hw2 <- runif(50, 4, 50)
 hw2 <- replace(hw2, c(4,12,22,27), NA)
 hw2 #output has 4 NAs
@@ -43,3 +44,18 @@ practice_everyother #output has 12 values that match the 12 in the assignment in
 
 final <- plus10[c(TRUE, FALSE)]
 final
+
+#Alternate solution:
+
+odds <- seq(from = 1, to = 23, by = 2)
+odds
+final_alternate <- plus10[odds]
+final_alternate
+
+
+#soft-coding
+odds_alt <- seq(from = 1, to = length(plus10), by = 2)
+
+seq(1, length(plus10), 2)
+
+
