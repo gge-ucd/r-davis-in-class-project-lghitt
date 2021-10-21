@@ -10,10 +10,13 @@ surveys_weight_range <- surveys %>%
   filter(weight >30, weight <60)
 head(surveys_weight_range)  
 
+head(surveys_weight_range, ,13)
+View(surveys_weight_range)
+
 
 ### Question 3 ###
 biggest_critters <- surveys %>%
-  filter(!is.na(weight)) %>%
+  filter(!is.na(weight) & !is.na(sex) & !is.na(species)) %>%
   group_by(species_id, sex) %>%
   summarize(max_weight = max(weight), min_weight = min(weight))
 biggest_critters
@@ -36,7 +39,8 @@ arrange(surveys_nas_by_spp, desc(n)) #spp AH has most NAs by far, followed by DM
 surveys_nas_by_year <- surveys %>%
   group_by(year) %>%
   filter(is.na(weight)) %>%
-  tally()
+  summarize(n(), mean= mean(weight, na.rm=T))
+surveys_nas_by_year
 arrange(surveys_nas_by_year, desc(n)) #Most NAs in 1977, followed by 98, 87, 88, 78
 
 
