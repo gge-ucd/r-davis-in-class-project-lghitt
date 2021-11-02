@@ -54,6 +54,9 @@ surveys_weight_cat_2b <- surveys %>%
 
 #casewhen returned 34786 observations while ifelse returned 32283 observations
 
+# beware! For casewhen, one option for the final argument is to just have T ~ "large"  if you use this method, this means that all NA values will be grouped into this final argument as well as whatever cases do not meet the criteria of the other specified arguments!
+
+
 # Bonus
 
 #yeah, I have no clue. Maybe with more dedicated Googling I could come up with something on my own but I'm running low on time this week :(
